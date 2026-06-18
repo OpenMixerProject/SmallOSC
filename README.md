@@ -1,10 +1,10 @@
-# SmallOSC
+# Small-OSC
 
-SmallOSC is a minimal [Open Sound Control](http://opensoundcontrol.org/) (OSC) library written in C. The typical use case is to parse a raw buffer received directly from a socket. Given the limited nature of the library it also tends to be quite fast. It doesn't hold on to much state and it doesn't do much error checking. If you have a good idea of what OSC packets you will receive and need to process them quickly, this library might be for you.
+Small-OSC is a minimal [Open Sound Control](http://opensoundcontrol.org/) (OSC) library written in C. The typical use case is to parse a raw buffer received directly from a socket. Given the limited nature of the library it also tends to be quite fast. It doesn't hold on to much state and it doesn't do much error checking. If you have a good idea of what OSC packets you will receive and need to process them quickly, this library might be for you.
 
 # TinyOSC
 
-SmallOSC was forked from [tinyosc](https://github.com/mhroth/tinyosc) on 18.06.2026.
+Small-OSC was forked from [tinyosc](https://github.com/mhroth/tinyosc) on 18.06.2026.
 
 The goals:
 
@@ -12,7 +12,7 @@ The goals:
 - use it in OpenMixerControl
 
 ## Supported Features
-Due to its *tiny* or *small* nature, SmallOSC does not support all standard OSC features. Currently it supports:
+Due to its *tiny* or *small* nature, Small-OSC does not support all standard OSC features. Currently it supports:
 * message parsing
 * message writing
 * bundle parsing
@@ -36,9 +36,9 @@ Due to its *tiny* or *small* nature, SmallOSC does not support all standard OSC 
 ## Code Example
 ### Reading Messages
 ```C
-#include "smallosc.h"
+#include "small-osc.h"
 
-tosc_message osc; // declare the SmallOSC structure
+tosc_message osc; // declare the Small-OSC structure
 char buffer[1024]; // declare a buffer into which to read the socket contents
 int len = 0; // the number of bytes read from the socket
 
@@ -116,16 +116,16 @@ send(buffer, tosc_getBundleLength(&bundle));
 ```
 
 ### main.c
-A small example program is included in `main.c`. Build it using the included shell script `build.sh`, and run it with `smallosc`. The program simply opens a UDP socket on port 9000 and prints out received OSC messages. Press Ctrl+C to stop. Try it with any OSC client, such as TouchOSC. This program is also an example for how SmallOSC is expected to be used.
+A small example program is included in `main.c`. Build it using the included shell script `build.sh`, and run it with `small-osc`. The program simply opens a UDP socket on port 9000 and prints out received OSC messages. Press Ctrl+C to stop. Try it with any OSC client, such as TouchOSC. This program is also an example for how Small-OSC is expected to be used.
 
 #### Sample Output
 ```
 Starting write tests:
 [56 bytes] /address fsibTFNI 1 hello world -1 [8]001080F0011181F1 true false nil inf
 done.
-smallosc is now listening on port 9000.
+small-osc is now listening on port 9000.
 Press Ctrl+C to stop.
 ```
 
 ## License
-SmallOSC is published under the [ISC license](http://opensource.org/licenses/ISC). Please see the `LICENSE` file included in this repository.
+Small-OSC is published under the [ISC license](http://opensource.org/licenses/ISC). Please see the `LICENSE` file included in this repository.

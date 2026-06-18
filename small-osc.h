@@ -14,13 +14,11 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
-#ifndef _TINY_OSC_
-#define _TINY_OSC_
+#ifndef _SMALL_OSC_
+#define _SMALL_OSC_
 
 #include <stdbool.h>
 #include <stdint.h>
-
-#define TINYOSC_TIMETAG_IMMEDIATELY 1L
 
 #ifdef __cplusplus
 extern "C" {
@@ -176,4 +174,4 @@ void tosc_printMessage(tosc_message *o);
 }
 #endif
 
-#endif // _TINY_OSC_
+#endif // _SMALL_OSC_

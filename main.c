@@ -57,7 +57,7 @@ int main(int argc, char *argv[]) {
   sin.sin_port = htons(9000);
   sin.sin_addr.s_addr = INADDR_ANY;
   bind(fd, (struct sockaddr *) &sin, sizeof(struct sockaddr_in));
-  printf("tinyosc is now listening on port 9000.\n");
+  printf("small-osc is now listening on port 9000.\n");
   printf("Press Ctrl+C to stop.\n");
 
   while (keepRunning) {
