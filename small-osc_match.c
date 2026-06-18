@@ -1,5 +1,5 @@
 /*
- * tinyosc_match.c
+ * small-osc_match.c
  *
  *  Created on: May 17, 2022
  *      Author: master
@@ -647,7 +647,7 @@ bool osc_matchPattern(const char *pPatt, int pPattLen, const char *pName, int pN
 //// call in / glue code for tinyosc
 
 #include <string.h>
-#include "tinyosc_match.h"
+#include "small-osc_match.h"
 
 bool tosc_matchAddress(tosc_message *o, const char* pcName) {
 	const char* pcPatt = tosc_getAddress(o);

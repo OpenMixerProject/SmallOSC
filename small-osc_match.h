@@ -1,5 +1,5 @@
 /*
- * tinyosc_match.h
+ * small-osc_match.h
  *
  *  Created on: May 17, 2022
  *      Author: master
@@ -9,7 +9,7 @@
 #define MAIN_TINYOSC_MATCH_H_
 
 #include <stdbool.h>
-#include "tinyosc.h"
+#include "small-osc.h"
 
 bool tosc_matchAddress(tosc_message *o, const char* pcName);
 
