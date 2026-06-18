@@ -11,6 +11,10 @@ The goals:
 - implement the fixes distributed over all the various forks and put them into one repository
 - use it in OpenMixerControl
 
+# MicroOSC
+
+There is also MicroOsc: https://github.com/thomasfredericks/MicroOsc
+
 ## Supported Features
 Due to its *tiny* or *small* nature, Small-OSC does not support all standard OSC features. Currently it supports:
 * message parsing
