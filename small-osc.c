@@ -30,7 +30,7 @@
 #define htonll(x) htobe64(x)
 #define ntohll(x) be64toh(x)
 #endif
-#include "tinyosc.h"
+#include "small-osc.h"
 
 #define BUNDLE_ID 0x2362756E646C6500L // "#bundle"
 

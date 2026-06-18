@@ -31,5 +31,5 @@
 # Debug files
 *.dSYM/
 
-tinyosc
-tinyosc-osx
+small-osc
+small-osc-osx

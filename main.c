@@ -22,7 +22,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
-#include "tinyosc.h"
+#include "small-osc.h"
 
 static volatile bool keepRunning = true;
 

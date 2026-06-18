@@ -1,9 +1,18 @@
+# SmallOSC
+
+SmallOSC is a minimal [Open Sound Control](http://opensoundcontrol.org/) (OSC) library written in C. The typical use case is to parse a raw buffer received directly from a socket. Given the limited nature of the library it also tends to be quite fast. It doesn't hold on to much state and it doesn't do much error checking. If you have a good idea of what OSC packets you will receive and need to process them quickly, this library might be for you.
+
 # TinyOSC
 
-TinyOSC is a minimal [Open Sound Control](http://opensoundcontrol.org/) (OSC) library written in C. The typical use case is to parse a raw buffer received directly from a socket. Given the limited nature of the library it also tends to be quite fast. It doesn't hold on to much state and it doesn't do much error checking. If you have a good idea of what OSC packets you will receive and need to process them quickly, this library might be for you.
+SmallOSC was forked from [tinyosc](https://github.com/mhroth/tinyosc) on 18.06.2026.
+
+The goals:
+
+- implement the fixes distributed over all the various forks and put them into one repository
+- use it in OpenMixerControl
 
 ## Supported Features
-Due to its *tiny* nature, TinyOSC does not support all standard OSC features. Currently it supports:
+Due to its *tiny* or *small* nature, SmallOSC does not support all standard OSC features. Currently it supports:
 * message parsing
 * message writing
 * bundle parsing
@@ -27,9 +36,9 @@ Due to its *tiny* nature, TinyOSC does not support all standard OSC features. Cu
 ## Code Example
 ### Reading Messages
 ```C
-#include "tinyosc.h"
+#include "smallosc.h"
 
-tosc_message osc; // declare the TinyOSC structure
+tosc_message osc; // declare the SmallOSC structure
 char buffer[1024]; // declare a buffer into which to read the socket contents
 int len = 0; // the number of bytes read from the socket
 
@@ -107,36 +116,16 @@ send(buffer, tosc_getBundleLength(&bundle));
 ```
 
 ### main.c
-A small example program is included in `main.c`. Build it using the included shell script `build.sh`, and run it with `tinyosc`. The program simply opens a UDP socket on port 9000 and prints out received OSC messages. Press Ctrl+C to stop. Try it with any OSC client, such as TouchOSC. This program is also an example for how TinyOSC is expected to be used.
+A small example program is included in `main.c`. Build it using the included shell script `build.sh`, and run it with `smallosc`. The program simply opens a UDP socket on port 9000 and prints out received OSC messages. Press Ctrl+C to stop. Try it with any OSC client, such as TouchOSC. This program is also an example for how SmallOSC is expected to be used.
 
 #### Sample Output
 ```
 Starting write tests:
 [56 bytes] /address fsibTFNI 1 hello world -1 [8]001080F0011181F1 true false nil inf
 done.
-tinyosc is now listening on port 9000.
+smallosc is now listening on port 9000.
 Press Ctrl+C to stop.
 ```
 
-
-## Tests
-Meh. Not really. But it works with [TouchOSC](http://hexler.net/software/touchosc)!
-
 ## License
-TinyOSC is published under the [ISC license](http://opensource.org/licenses/ISC). Please see the `LICENSE` file included in this repository, also reproduced below. In short, you are welcome to use this code for any purpose, including commercial and closed-source use.
-
-```
-Copyright (c) 2015, Martin Roth <mhroth@gmail.com>
-
-Permission to use, copy, modify, and/or distribute this software for any
-purpose with or without fee is hereby granted, provided that the above
-copyright notice and this permission notice appear in all copies.
-
-THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
-WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
-MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
-ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
-WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
-ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
-OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-```
+SmallOSC is published under the [ISC license](http://opensource.org/licenses/ISC). Please see the `LICENSE` file included in this repository.
